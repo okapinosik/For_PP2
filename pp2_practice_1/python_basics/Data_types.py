@@ -1,5 +1,5 @@
 """
-Text Type:	str
+Text Type:str
 Numeric Types:	int, float, complex
 Sequence Types:	list, tuple, range
 Mapping Type:	dict
