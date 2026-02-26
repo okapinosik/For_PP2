@@ -4,7 +4,7 @@ import json
 
 FILE_NAME = "sample-data.json"
 
-with open(sample-data.json, "r", encoding="utf-8") as f:
+with open(FILE_NAME, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 interfaces = data.get("imdata", [])
