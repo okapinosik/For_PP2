@@ -2,7 +2,7 @@
 
 import json
 
-FILE_NAME = "sample-data.json"
+FILE_NAME = "sample-data1.json"
 
 with open(FILE_NAME, "r", encoding="utf-8") as f:
     data = json.load(f)
