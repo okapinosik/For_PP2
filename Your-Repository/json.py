@@ -2,7 +2,7 @@
 
 import json
 
-FILE_NAME = "sample-data1.json"
+FILE_NAME = "sample-data.json"
 
 with open(FILE_NAME, "r", encoding="utf-8") as f:
     data = json.load(f)
@@ -49,14 +49,6 @@ for dn, descr, speed, mtu in rows:
 
 
 
-x = '{ "name":"John", "age":30, "city":"New York"}'
-
-# parse x:
-y = json.loads(x)
-
-# the result is a Python dictionary:
-print(y["age"])
-
 
 """ 
 You can convert Python objects of the following types, into JSON strings:
@@ -74,6 +66,4 @@ None
 
 """ Convert Python objects into JSON strings, and print the values: """
 
-print(json.dumps({"name": "John", "age": 30}))
-print(json.dumps(["apple", "bananas"]))
 
