@@ -1,10 +1,8 @@
 import re
 import json
-
 with open("raw.txt", "r", encoding="utf-8") as f:
     text = f.read()
 lines = text.splitlines()
-
 # 1. All prices
 price_pattern = r"\b\d{1,3}(?: \d{3})*,\d{2}\b"
 prices = [float(p.replace(" ", "").replace(",", ".")) for p in re.findall(price_pattern, text)]
