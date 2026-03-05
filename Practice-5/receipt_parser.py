@@ -72,7 +72,7 @@ while i < len(lines):
 
 # 6. vivod
 result = {
-    "datetime": datetime,
+    "datetime": datetime_str,
     "payment_method": payment_method,
     "total_amount": total_amount,
     "all_prices": prices,
