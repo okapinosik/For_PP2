@@ -11,7 +11,7 @@ prices = [float(p.replace(" ", "").replace(",", ".")) for p in re.findall(price_
 
 # 2. Data and time
 dt_match = re.search(r"Время:\s*(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}:\d{2})", text)
-datetime = f"{dt_match.group(1)} {dt_match.group(2)}" if dt_match else None
+datetime_str = f"{dt_match.group(1)} {dt_match.group(2)}" if dt_match else None
 
 # 3. Sposob Oplaty
 payment_method = None
