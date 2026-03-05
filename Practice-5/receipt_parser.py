@@ -1,6 +1,11 @@
+import os
 import re
 import json
-with open("raw.txt", "r", encoding="utf-8") as f:
+
+base_dir = os.path.dirname(__file__)
+file_path = os.path.join(base_dir, "raw.txt")
+
+with open(file_path, "r", encoding="utf-8") as f:
     text = f.read()
 lines = text.splitlines()
 # 1. All prices
