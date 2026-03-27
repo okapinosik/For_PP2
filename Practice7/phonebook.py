@@ -75,6 +75,20 @@ def delete_contact(identifier):
     print(f"[INFO] Контакт {identifier} удален (если он существовал).")
 
 
+def show_all():
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM phonebook")
+            results = cur.fetchall()
+
+            if not results:
+                print("Телефонная книга пуста.")
+                return
+            
+            for row in results:
+                print(f"ID: {row[0]} | {row[1]} {row[2]} | Тел: {row[3]}")
+            
+
 if __name__ == "__main__":
     while True:
         print("\n--- PhoneBook Menu ---")
@@ -83,6 +97,7 @@ if __name__ == "__main__":
         print("3. Найти контакт (по имени или телефону)")
         print("4. Обновить данные контакта")
         print("5. Удалить контакт")
+        print("6. Показать все номера")
         print("0. Выход")
         
         choice = input("\nВыберите действие: ")
@@ -119,6 +134,9 @@ if __name__ == "__main__":
             confirm = input(f"Вы уверены, что хотите удалить {identifier}? (да/нет): ")
             if confirm.lower() == 'да':
                 delete_contact(identifier)
+                
+        elif choice == '6':
+            show_all()
 
         elif choice == '0':
             print("Завершение работы")
