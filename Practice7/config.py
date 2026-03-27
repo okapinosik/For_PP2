@@ -1,0 +1,1 @@
+from db_creds import host, user, password, db_name
