@@ -2,7 +2,6 @@ import psycopg2
 import csv
 from config import host, user, password, db_name
 
-
 def get_connection():
     return psycopg2.connect(
         host=host,
@@ -38,11 +37,7 @@ def import_from_csv(filename):
 
 
 def add_contact(fname, lname, phone):
-    """
-    Добавляет нового пользователя.
-    Если пользователь уже существует, обновляет телефон
-    через stored procedure insert_or_update_user.
-    """
+
     try:
         with get_connection() as conn:
             with conn.cursor() as cur:
@@ -58,10 +53,7 @@ def add_contact(fname, lname, phone):
 
 
 def update_contact(contact_id, new_name=None, new_last=None, new_phone=None):
-    """
-    Оставил твою старую функцию обновления по ID.
-    Она полезна, даже если в задании главный акцент на procedures/functions.
-    """
+
     try:
         with get_connection() as conn:
             with conn.cursor() as cur:
@@ -88,9 +80,6 @@ def update_contact(contact_id, new_name=None, new_last=None, new_phone=None):
 
 
 def search_contacts(pattern):
-    """
-    Поиск через SQL function search_phonebook(pattern)
-    """
     try:
         with get_connection() as conn:
             with conn.cursor() as cur:
@@ -108,10 +97,6 @@ def search_contacts(pattern):
 
 
 def insert_many_contacts():
-    """
-    Массовое добавление пользователей.
-    Вызывает procedure insert_many_users(...).
-    """
     try:
         n = int(input("Сколько контактов хотите добавить? "))
 
@@ -147,9 +132,7 @@ def insert_many_contacts():
 
 
 def delete_contact(identifier):
-    """
-    Удаление через stored procedure delete_user_by_name_or_phone
-    """
+    
     try:
         with get_connection() as conn:
             with conn.cursor() as cur:
@@ -179,9 +162,6 @@ def show_all():
 
 
 def show_page(limit_value, offset_value):
-    """
-    Пагинация через SQL function get_phonebook_page(limit, offset)
-    """
     try:
         with get_connection() as conn:
             with conn.cursor() as cur:
