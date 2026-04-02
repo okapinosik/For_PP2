@@ -1,9 +1,4 @@
--- =========================================
--- PROCEDURES.SQL
--- =========================================
 
--- 2. Добавить нового пользователя,
--- если уже существует - обновить телефон
 CREATE OR REPLACE PROCEDURE insert_or_update_user(
     p_first_name VARCHAR,
     p_last_name VARCHAR,
@@ -19,8 +14,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 
--- 3. Добавить много пользователей из массивов
--- с проверкой телефона и возвратом некорректных данных
 CREATE OR REPLACE PROCEDURE insert_many_users(
     p_first_names TEXT[],
     p_last_names TEXT[],
@@ -54,7 +47,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 
--- 5. Удаление по username или phone
 CREATE OR REPLACE PROCEDURE delete_user_by_name_or_phone(
     p_value TEXT
 )

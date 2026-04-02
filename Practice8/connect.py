@@ -1,42 +1,17 @@
 import psycopg2
-from config import host, user, password, db_name
+from config import load_config
 
-connection = None
-try:
-    connection = psycopg2.connect(
-        host=host,
-        user=user,
-        password=password,
-        database=db_name,
-        port="5432"
-    )
-    connection.autocommit = True
-    
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT version();")
-        print(f"Server version: {cursor.fetchone()}")
+def connect(config):
+    """ Connect to the PostgreSQL database server """
+    try:
+        # connecting to the PostgreSQL server
+        with psycopg2.connect(**config) as conn:
+            print('Connected to the PostgreSQL server.')
+            return conn
+    except (psycopg2.DatabaseError, Exception) as error:
+        print(error)
 
-    # Создаем таблицу
-    with connection.cursor() as cursor:
-        cursor.execute(
-            """CREATE TABLE IF NOT EXISTS phonebook (
-    id SERIAL PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50),
-    phone_number VARCHAR(20) NOT NULL,
-    CONSTRAINT uq_phone UNIQUE (phone_number),
-    CONSTRAINT uq_person UNIQUE (first_name, last_name)
-);
-            );"""
-        )
-        print("[INFO] Table 'phonebook' created successfully")
 
-except Exception as _ex:
-    print("[INFO] Error while working with PostgreSQL:", _ex)
-finally:
-    if connection:
-        connection.close()
-        print("[INFO] PostgreSQL connection closed")
-        
-        
-        
+if __name__ == '__main__':
+    config = load_config()
+    connect(config)
