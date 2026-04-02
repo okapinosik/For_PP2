@@ -1,4 +1,3 @@
-
 CREATE OR REPLACE PROCEDURE insert_or_update_user(
     p_first_name VARCHAR,
     p_last_name VARCHAR,
@@ -18,12 +17,14 @@ CREATE OR REPLACE PROCEDURE insert_many_users(
     p_first_names TEXT[],
     p_last_names TEXT[],
     p_phones TEXT[],
-    INOUT p_invalid_data TEXT[] DEFAULT ARRAY[]::TEXT[]
+    INOUT p_invalid_data TEXT[] DEFAULT NULL
 )
 AS $$
 DECLARE
     i INT;
 BEGIN
+    p_invalid_data := ARRAY[]::TEXT[];
+
     IF array_length(p_first_names, 1) IS DISTINCT FROM array_length(p_last_names, 1)
        OR array_length(p_first_names, 1) IS DISTINCT FROM array_length(p_phones, 1) THEN
         RAISE EXCEPTION 'Arrays must have the same length';
@@ -55,7 +56,7 @@ BEGIN
     DELETE FROM phonebook
     WHERE first_name = p_value
        OR last_name = p_value
-       OR (first_name || ' ' || last_name) = p_value
+       OR TRIM(first_name || ' ' || COALESCE(last_name, '')) = p_value
        OR phone_number = p_value;
 END;
 $$ LANGUAGE plpgsql;

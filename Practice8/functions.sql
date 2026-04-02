@@ -1,4 +1,3 @@
-
 CREATE OR REPLACE FUNCTION search_phonebook(p_pattern TEXT)
 RETURNS TABLE (
     id INT,
@@ -21,7 +20,6 @@ BEGIN
     ORDER BY pb.id;
 END;
 $$ LANGUAGE plpgsql;
-
 
 
 CREATE OR REPLACE FUNCTION get_phonebook_page(p_limit INT, p_offset INT)
