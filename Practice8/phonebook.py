@@ -58,13 +58,13 @@ def init_table():
                 cur.execute(add_uq_person_sql)
                 cur.execute(add_uq_phone_sql)
             conn.commit()
-        print("[INFO] Таблица phonebook и ограничения готовы.")
+        print("Таблица phonebook и ограничения готовы.")
     except Exception as e:
-        print(f"[ERROR] Ошибка при создании таблицы: {e}")
+        print(f"Ошибка при создании таблицы: {e}")
         
 def execute_sql_file(filename):
     if not os.path.exists(filename):
-        print(f"[ERROR] Файл {filename} не найден.")
+        print(f"Файл {filename} не найден.")
         return
 
     try:
@@ -76,9 +76,9 @@ def execute_sql_file(filename):
                 cur.execute(sql_script)
             conn.commit()
 
-        print(f"[INFO] SQL из файла {filename} успешно выполнен.")
+        print(f"SQL из файла {filename} успешно выполнен")
     except Exception as e:
-        print(f"[ERROR] Ошибка при выполнении {filename}: {e}")
+        print(f"Ошибка при выполнении {filename}: {e}")
 
 
 def initialize_database():
@@ -109,9 +109,9 @@ def import_from_csv(filename):
                         )
                 conn.commit()
 
-        print(f"[INFO] Импорт из {filename} завершён.")
+        print(f"Импорт из {filename} завершён")
     except Exception as e:
-        print(f"[ERROR] Ошибка при импорте CSV: {e}")
+        print(f"Ошибка при импорте CSV: {e}")
 
 
 def add_contact(fname, lname, phone):
@@ -124,7 +124,7 @@ def add_contact(fname, lname, phone):
                 )
             conn.commit()
 
-        print(f"[INFO] Контакт {fname} {lname} добавлен/обновлён.")
+        print(f"[INFO] Контакт {fname} {lname} добавлен/обновлён")
     except Exception as e:
         print(f"[ERROR] Не удалось добавить контакт: {e}")
 
@@ -150,7 +150,7 @@ def update_contact(contact_id, new_name=None, new_last=None, new_phone=None):
                     )
             conn.commit()
 
-        print(f"[INFO] Контакт с ID {contact_id} успешно обновлён.")
+        print(f" Контакт с ID {contact_id} успешно обновлён")
     except Exception as e:
         print(f"[ERROR] Не удалось обновить контакт: {e}")
 
@@ -163,7 +163,7 @@ def search_contacts(pattern):
                 results = cur.fetchall()
 
                 if not results:
-                    print("Ничего не найдено.")
+                    print("Ничего не найдено")
                     return
 
                 for row in results:
@@ -203,16 +203,16 @@ def insert_many_contacts():
 
             conn.commit()
 
-        print("[INFO] Массовое добавление завершено.")
+        print("Массовое добавление завершено")
 
         if invalid_rows and invalid_rows[0]:
             print("Некорректные данные:")
             for item in invalid_rows[0]:
                 print("-", item)
         else:
-            print("Все записи корректны.")
+            print("Все записи корректны")
     except ValueError:
-        print("[ERROR] Нужно ввести число.")
+        print("[ERROR] Нужно ввести число")
     except Exception as e:
         print(f"[ERROR] Ошибка при массовой вставке: {e}")
 
@@ -224,9 +224,9 @@ def delete_contact(identifier):
                 cur.execute("CALL delete_user_by_name_or_phone(%s)", (identifier,))
             conn.commit()
 
-        print(f"[INFO] Удаление по значению '{identifier}' выполнено.")
+        print(f"[INFO] Удаление по значению '{identifier}' выполнено")
     except Exception as e:
-        print(f"[ERROR] Не удалось удалить контакт: {e}")
+        print(f"Не удалось удалить контакт: {e}")
 
 
 def show_all():
@@ -237,7 +237,7 @@ def show_all():
                 results = cur.fetchall()
 
                 if not results:
-                    print("Телефонная книга пуста.")
+                    print("Телефонная книга пустая")
                     return
 
                 for row in results:
@@ -257,13 +257,13 @@ def show_page(limit_value, offset_value):
                 results = cur.fetchall()
 
                 if not results:
-                    print("Нет данных для этой страницы.")
+                    print("Нет данных для этой страницы")
                     return
 
                 for row in results:
                     print(f"ID: {row[0]} | {row[1]} {row[2]} | Тел: {row[3]}")
     except Exception as e:
-        print(f"[ERROR] Ошибка при выводе страницы: {e}")
+        print(f"Ошибка при выводе страницы: {e}")
 
 
 if __name__ == "__main__":
@@ -284,7 +284,7 @@ if __name__ == "__main__":
         choice = input("\nВыберите действие: ").strip()
 
         if choice == "1":
-            filename = input("Введите имя CSV файла: ").strip()
+            filename = input("Введите имя CSV файла(ток с .csv): ").strip()
             import_from_csv(filename)
 
         elif choice == "2":
@@ -300,7 +300,7 @@ if __name__ == "__main__":
 
         elif choice == "4":
             cid = input("Введите ID контакта для редактирования: ").strip()
-            print("Введите новые данные (или нажмите Enter, чтобы оставить без изменений):")
+            print("Введите новые данные (или Enter, чтобы оставить без изменений):")
             n_name = input("Новое имя: ").strip()
             n_last = input("Новая фамилия: ").strip()
             n_phone = input("Новый телефон: ").strip()
@@ -334,7 +334,7 @@ if __name__ == "__main__":
                 print("[ERROR] LIMIT и OFFSET должны быть числами")
 
         elif choice == "0":
-            print("Завершение работы.")
+            print("Завершение работы")
             break
 
         else:

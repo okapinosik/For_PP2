@@ -66,8 +66,6 @@ print("7:", task7("snake_case_string"))
 
 
 # 8. Write a Python program to split a string at uppercase letters.
-
-
 def task8(s):
     pattern = r"[A-Z][a-z]*"
     return re.findall(pattern, s)
