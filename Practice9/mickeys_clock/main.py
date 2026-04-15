@@ -6,7 +6,7 @@ def main():
     pygame.init()
     
 
-    WIDTH, HEIGHT = 1366,768 
+    WIDTH, HEIGHT = 1920,1080
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Mickey Mouse Clock")
     
