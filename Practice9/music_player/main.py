@@ -33,7 +33,7 @@ def draw_controls_legend(screen, font, x, y):
         ("SPACE:", "Pause/Resume"),
         ("N:", "Next Track"),
         ("B:", "Previous Track"),
-        ("Escape:", "Quit"),
+        ("Q:", "Quit"),
     ]
     for i, (key, action) in enumerate(controls):
         col = x + (i % 2) * 500
@@ -65,7 +65,7 @@ def main():
                 running = False
 
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
+                if event.key == pygame.K_q:
                     running = False
                 elif event.key == pygame.K_p:
                     player.play()
