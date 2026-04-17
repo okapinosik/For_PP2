@@ -14,15 +14,15 @@ class MickeyClock:
         self.bg = pygame.transform.scale(self.bg, self.screen_size)
         
         self.mickey_body = pygame.image.load(os.path.join(img_dir, "mikkey.png")).convert_alpha()
-        self.mickey_body = pygame.transform.scale(self.mickey_body, (900, 600)) 
+        self.mickey_body = pygame.transform.scale(self.mickey_body, (800, 500)) 
         self.mickey_rect = self.mickey_body.get_rect(center=self.center)
         
 
         self.min_hand_orig = pygame.image.load(os.path.join(img_dir, "hand_right.png")).convert_alpha()
-        self.min_hand_orig = pygame.transform.scale(self.min_hand_orig, (300, 350)) 
+        self.min_hand_orig = pygame.transform.scale(self.min_hand_orig, (250, 300)) 
         
         self.sec_hand_orig = pygame.image.load(os.path.join(img_dir, "hand_left.png")).convert_alpha()
-        self.sec_hand_orig = pygame.transform.scale(self.sec_hand_orig, (300, 300)) 
+        self.sec_hand_orig = pygame.transform.scale(self.sec_hand_orig, (250, 220)) 
 
     def blit_rotate_pivot(self, surface, image, pos, originPos, angle):
 
@@ -52,8 +52,8 @@ class MickeyClock:
         sec_angle = -(now.second * 6)
 
 
-        min_pivot_x = self.min_hand_orig.get_width() // 2
-        min_pivot_y = self.min_hand_orig.get_height() 
+        min_pivot_x = self.min_hand_orig.get_width() // 2 
+        min_pivot_y = self.min_hand_orig.get_height()
         
         sec_pivot_x = self.sec_hand_orig.get_width() 
         sec_pivot_y = self.sec_hand_orig.get_height()  

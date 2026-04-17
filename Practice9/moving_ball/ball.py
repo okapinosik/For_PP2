@@ -2,7 +2,7 @@ import pygame
 
 class Ball:
     RADIUS     = 25          
-    STEP       = 7          
+    STEP       = 20          
     COLOR      = (220, 40, 40)   
     OUTLINE    = (160, 10, 10)    
 
