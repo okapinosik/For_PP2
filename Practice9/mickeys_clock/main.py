@@ -5,7 +5,7 @@ from clock import MickeyClock
 def main():
     pygame.init()
     
-    WIDTH, HEIGHT = 1366,720
+    WIDTH, HEIGHT = 1366,800
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Mickey Mouse Clock")
     
