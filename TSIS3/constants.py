@@ -1,0 +1,14 @@
+import pygame
+
+FPS = 165
+SCREEN_WIDTH = 400
+SCREEN_HEIGHT = 600
+SPEED = 2
+COINS_COUNT = 0
+TOTAL_TIME = 0 
+
+BLUE = (0, 0, 255)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
