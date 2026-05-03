@@ -1,0 +1,4 @@
+first_name,last_name,email,birthday,group,phone,phone_type
+Ali,Khan,ali@gmail.com,2004-05-12,Friend,+77771234567,mobile
+Dana,Smith,dana@work.com,2002-10-01,Work,+77779876543,work
+Mom,,mom@gmail.com,1978-03-22,Family,+77001112233,home

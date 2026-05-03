@@ -1,0 +1,170 @@
+[
+    {
+        "name": "Aisha",
+        "email": null,
+        "birthday": "2005-03-28",
+        "group": "Family",
+        "phones": [
+            {
+                "number": "870777779977",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "name": "Frank Miller",
+        "email": "frank@gmail.com",
+        "birthday": "1985-08-19",
+        "group": "Family",
+        "phones": [
+            {
+                "number": "+77756667788",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "name": "Carol White",
+        "email": "carol@mail.ru",
+        "birthday": "2001-07-25",
+        "group": "Family",
+        "phones": [
+            {
+                "number": "+77712345678",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "name": "Emma Davis",
+        "email": "emma.davis@corp.kz",
+        "birthday": "1993-12-01",
+        "group": "Work",
+        "phones": [
+            {
+                "number": "+77023334455",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "name": "Bob Smith",
+        "email": "bob.smith@company.com",
+        "birthday": "1988-11-02",
+        "group": "Work",
+        "phones": [
+            {
+                "number": "+77089876543",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "name": "asha",
+        "email": "asha@email.com",
+        "birthday": "2007-10-17",
+        "group": "Friend",
+        "phones": [
+            {
+                "number": "89997770000",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "name": "фшырф",
+        "email": null,
+        "birthday": "2005-05-30",
+        "group": "Friend",
+        "phones": [
+            {
+                "number": "94449994499",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "name": "Grace Lee",
+        "email": "grace.lee@yandex.ru",
+        "birthday": null,
+        "group": "Friend",
+        "phones": [
+            {
+                "number": "+77099998877",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Alice Johnson",
+        "email": "alice@gmail.com",
+        "birthday": "1995-03-14",
+        "group": "Friend",
+        "phones": [
+            {
+                "number": "+77011234567",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Qyralay",
+        "email": "new@mail.com",
+        "birthday": "2007-12-15",
+        "group": "Other",
+        "phones": [
+            {
+                "number": "87770007777",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "name": "python -u \"c:\\Users\\suanb\\Desktop\\pp2\\TSIS\\TSIS1\\cly.py\"",
+        "email": null,
+        "birthday": "2007-12-12",
+        "group": "Other",
+        "phones": [
+            {
+                "number": "87770007777",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "David Brown",
+        "email": null,
+        "birthday": "1979-05-30",
+        "group": "Other",
+        "phones": [
+            {
+                "number": "+77001112233",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "python -u \"c:\\Users\\suanb\\Desktop\\pp2\\TSIS\\TSIS1\\runner.py\"",
+        "email": null,
+        "birthday": "2008-01-07",
+        "group": "Other",
+        "phones": [
+            {
+                "number": "87776665544",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "name": "ernur",
+        "email": null,
+        "birthday": "2008-01-07",
+        "group": "Other",
+        "phones": [
+            {
+                "number": "87776665544",
+                "type": "mobile"
+            }
+        ]
+    }
+]
